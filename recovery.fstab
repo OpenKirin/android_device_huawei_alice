@@ -1,3 +1,4 @@
+/3rdmodem         emmc       /dev/block/platform/hi_mci.0/by-name/3rdmodem		flags=display="3rdmodem";backup=1
 /cache            ext4       /dev/block/platform/hi_mci.0/by-name/cache			flags=display="Cache";backup=1;wipeingui
 /data             ext4       /dev/block/platform/hi_mci.0/by-name/userdata		length=-16384
 /cust             ext4       /dev/block/platform/hi_mci.0/by-name/cust			flags=display="Custom";backup=1;wipeingui

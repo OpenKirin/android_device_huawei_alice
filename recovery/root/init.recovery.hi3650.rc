@@ -1,0 +1,17 @@
+on fs
+
+    start teecd
+    start volisnotd
+
+service teecd /sbin/teecd
+    disabled
+    user root
+    group root
+    seclabel u:r:tee:s0
+
+service volisnotd /sbin/volisnotd -m
+    disabled
+    user root
+    group root
+    seclabel u:r:tee:s0
+

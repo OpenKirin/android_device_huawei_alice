@@ -14,6 +14,7 @@ service teecd /sbin/teecd
     seclabel u:r:tee:s0
 
 service volisnotd /sbin/volisnotd -m
+    oneshot
     disabled
     user root
     group root

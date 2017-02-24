@@ -33,6 +33,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/huawei/frd/kernel:kernel
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    sys.usb.configfs=1 \
+    sys.usb.config=mtp,adb \
+    persist.sys.usb.config=manufacture,adb \
+    sys.usb.controller=ff100000.dwc3
+
 PRODUCT_NAME := omni_frd
 PRODUCT_DEVICE := frd
 PRODUCT_BRAND := Huawei

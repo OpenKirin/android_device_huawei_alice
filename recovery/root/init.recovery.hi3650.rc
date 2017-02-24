@@ -1,5 +1,8 @@
+import /init.usb.configfs.rc
+
 on fs
 
+    symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
     start teecd
     start volisnotd
 

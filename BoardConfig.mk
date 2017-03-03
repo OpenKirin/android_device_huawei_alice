@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+LOCAL_PATH := device/huawei/frd
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := KIRIN
 TARGET_NO_BOOTLOADER := true
@@ -36,17 +38,12 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
-BOARD_KERNEL_CMDLINE := mmcparts=mmcblk0:p1(vrl),p2(vrl_backup),p6(modemnvm_factory),p9(splash),p10(modemnvm_backup),p11(modemnvm_img),p12(modemnvm_system),p14(3rdmodemnvm),p15(3rdmodemnvmbkp),p18(modem_om),p21(modemnvm_update),p31(modem),p32(modem_dsp),p35(3rdmodem) loglevel=4 page_tracker=on androidboot.selinux=permissive
-
-BOARD_KERNEL_BASE := 0x00480000
+# Kernel
+BOARD_KERNEL_BASE := 0x00478000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00000000 --ramdisk_offset 0x08000000 --tags_offset 0x07a00000
-
-# prebuilt kernel
-TARGET_PREBUILT_KERNEL := device/huawei/frd/kernel
-# else uncomment below to build from sauce
-# TARGET_KERNEL_SOURCE := kernel/huawei/frd
-# TARGET_KERNEL_CONFIG := frd_defconfig
+BOARD_KERNEL_CMDLINE := loglevel=4 page_tracker=on androidboot.selinux=permissive
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x07588000
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864

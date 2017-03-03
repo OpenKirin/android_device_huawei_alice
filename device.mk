@@ -28,7 +28,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     charger_res_images \
-    charger
+    charger \
+    tmp_timer
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     sys.usb.configfs=1 \

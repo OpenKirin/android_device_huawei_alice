@@ -5,6 +5,7 @@ on fs
     symlink /dev/block/platform/hi_mci.0 /dev/block/bootdevice
     start teecd
     start volisnotd
+    start tmp_timer
 
 service teecd /sbin/teecd
     disabled
@@ -18,3 +19,7 @@ service volisnotd /sbin/volisnotd -m
     group root
     seclabel u:r:tee:s0
 
+service tmp_timer /sbin/tmp_timer
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0

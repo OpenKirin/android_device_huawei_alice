@@ -10,6 +10,6 @@
 /vendor		ext4		/dev/block/bootdevice/by-name/vendor		flags=display="Vendor";backup=1
 /product	ext4		/dev/block/bootdevice/by-name/product		flags=display="Product";backup=1
 /version	ext4		/dev/block/bootdevice/by-name/version		flags=display="Version";backup=1
-/patch_hw	ext4		/dev/block/bootdevice/by-name/patch		flags=display="Patch";backup=1
+#/patch_hw	ext4		/dev/block/bootdevice/by-name/patch		flags=display="Patch";backup=1
 /external_sd	vfat		/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="MicroSD Card";storage;wipeingui;removable
 /usbotg		auto		/dev/block/sda1         /dev/block/sda          flags=display="USB OTG";storage;removable;backup=0

@@ -22,6 +22,6 @@
 int main(int argc, char* argv[]) {
     argc;
     argv[0];
-    sleep(10);
+    sleep(12);
     property_set(PROP_NAME, "true");
 }

@@ -4,7 +4,7 @@
 /cache		ext4		/dev/block/bootdevice/by-name/cache
 /cust           ext4            /dev/block/bootdevice/by-name/cust       	flags=display="Cust";backup=1;wipeingui
 /misc		emmc		/dev/block/bootdevice/by-name/misc		flags=display="Misc";backup=0
-/oeminfo        emmc            /dev/block/bootdevice/by-name/oeminfo    	flags=display="OEMinfo";backup=1;wipeingui
+/oeminfo        emmc            /dev/block/bootdevice/by-name/oeminfo    	flags=display="OEMinfo";backup=1
 /data		f2fs		/dev/block/dm-0					length=-16384
 /system		ext4		/dev/block/bootdevice/by-name/system
 /vendor		ext4		/dev/block/bootdevice/by-name/vendor		flags=display="Vendor";backup=1;wipeingui

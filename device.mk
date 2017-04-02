@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 LineageOS
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,21 +21,10 @@ PRODUCT_COPY_FILES += \
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel
-
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger \
-    tmp_timer
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    sys.usb.configfs=1 \
-    sys.usb.config=mtp,adb \
-    persist.sys.usb.config=manufacture,adb \
-    sys.usb.controller=ff100000.dwc3
 
 # adb as root
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
@@ -43,7 +32,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += security.perf_harden=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.allow.mock.location=1
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.build.product=hi6210sft
+
 $(call inherit-product, build/target/product/full.mk)
 
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)

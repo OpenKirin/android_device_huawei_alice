@@ -1,31 +1,31 @@
 @Copyright 2017 - The LineageOS Project
 
-Huawei Honor 8 detailed specifications:
+Huawei P8Lite detailed specifications:
 ======================================
 
 Basic         |Spec Sheet
--------------:|:------------------------------------------------------------------------------------------------------------------------
+-------------:|:--------------------------------------------------------------------------------------------------------------------------
 Network	      | GSM / HSPA / LTE
-Launch	      |2016, July
-Body	      |145.5 x 71 x 7.5 mm (5.73 x 2.80 x 0.30 in); 153 g (5.40 oz); Dual SIM (Nano-SIM/ Micro-SIM, dual stand-by)
-Display	      |LTPS capacitive touchscreen, 16M colors; 5.2 inches; 1080 x 1920 pixels; Corning Gorilla Glass 3
-Platform      |Android OS, v6.0 (Marshmallow), upgradable to v7.0 (Nougat)
-Chipset	      |HiSilicon Kirin 950
-CPU	      |Octa-core (4x2.3 GHz Cortex-A72 & 4x1.8 GHz Cortex A53)
-GPU	      |Mali-T880 MP4
-Memory	      |32/64 GB, 4 GB RAM; microSD, up to 256 GB (uses SIM 2 slot)
-Rear Camera   |Dual 12 MP, f/2.2, 35mm, laser autofocus, dual-LED (dual tone) flash; 1080p@60fps, 1080p@30fps, 720p@120fps
-Front Camera  |8 MP, f/2.4, 1.4 µm pixel size
-Sound	      |- Active noise cancellation with dedicated mic; - DTS sound
-WLAN	      |Wi-Fi 802.11 a/b/g/n/ac, dual-band, WiFi Direct, hotspot
-Bluetooth     |v4.2, A2DP, EDR, LE
-GPS	      |Yes, with A-GPS, GLONASS/ BDS (market dependant)
+Launch	      |2015, April
+Body	      |143 x 70.6 x 7.7 mm (5.63 x 2.78 x 0.30 in); 131 g (4.62 oz); Dual SIM (Nano-SIM/ Micro-SIM, dual stand-by)
+Display	      |IPS LCD capacitive touchscreen, 16M colors; 5.0 inches; 720 x 1280 pixels; Corning Gorilla Glass 3
+Platform      |Android OS, v5.0.2 (Lollipop), upgradable to v6.0 (Marshmallow)
+Chipset	      |HiSilicon Kirin 620
+CPU	      |Octa-core 1.2 GHz Cortex-A53
+GPU	      |Mali-450MP4
+Memory	      |16 GB, 2 GB RAM; microSD, up to 256 GB (uses SIM 2 slot)
+Rear Camera   |13 MP, f/2.0, 27mm, autofocus, dual-LED flash, Geo-tagging, touch focus, face/smile detection, panorama, HDR, 1080p@30fps
+Front Camera  |5 MP, 720p
+Sound	      |- Active noise cancellation with dedicated mic
+WLAN	      |Wi-Fi 802.11 a/b/g/n, WiFi Direct, hotspot
+Bluetooth     |v4.0, A2DP, EDR, LE
+GPS	      |Yes, with A-GPS, GLONASS
 NFC	      |Yes
-Radio	      |No
-USB	      |Type-C 1.0 reversible connector
-Sensors	      |Fingerprint (rear-mounted), accelerometer, gyro, proximity, compass
-Battery	      |Non-removable Li-Po 3000 mAh battery
-Colors 	      |Pearl White, Midnight Black, Sapphire Blue, Gold
+Radio	      |FM radio
+USB	      |microUSB v2.0
+Sensors	      |Accelerometer, proximity, compass
+Battery	      |Non-removable Li-Ion 2200 mAh battery
+Colors 	      |Black, White, Gold
 
 
-![Honor 8](http://cdn2.gsmarena.com/vv/pics/huawei/huawei-honor-8-1.jpg "Honor8")
+![Huawei P8Lite](http://cdn2.gsmarena.com/vv/pics/huawei/huawei-p8-lite.jpg "Huawei P8Lite")

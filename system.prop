@@ -1,0 +1,48 @@
+ro.sf.lcd_density=320
+ro.opengles.version=131072
+ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
+ro.config.fm_type=libbcmfm_if
+ro.config.ipv4.mtu=1400
+gsm.fastdormancy.mode=3
+sys.refresh.dirty=1
+qemu.hw.mainkeys=0
+media.stagefright.use-awesome=false
+
+# Camera
+ro.camera.beauty.algo.doc=1
+ro.hwcamera.use.videosize.1080p=true
+ro.hwcamera.previeweffects=true
+persist.camera.cpp.duplication=false
+
+# Performance
+ro.am.reschedule_service=true
+
+ro.hwui.texture_cache_size=72
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.layer_cache_size=48
+ro.hwui.path_cache_size=32
+ro.hwui.shape_cache_size=2
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.gradient_cache_size=1
+ro.hwui.text_large_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_small_cache_width=1024
+ro.hwui.r_buffer_cache_size=8
+debug.hwui.render_dirty_regions=false
+
+# RIL
+rild.libargs=-m modem0
+rild.libpath=/system/lib64/libbalong-ril.so
+
+ro.telephony.ril_class=HwHisiRIL
+audioril.lib=libhuawei-audio-ril.so
+persist.radio.apm_sim_not_pwdn=1
+
+ro.config.hw_lte_support=true
+ro.config.hw_show_4G_Plus_icon=true
+ro.config.hw_show_network_icon=true
+ro.telephony.default_network=9
+ro.telephony.ril.config=simactivation
+telephony.lteOnCdmaDevice=0
+telephony.lteOnGsmDevice=1

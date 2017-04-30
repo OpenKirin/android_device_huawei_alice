@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!--
+ * Copyright (C) 2014 Huawei Inc.
+ * Cpu Freq Config
+ *
+                TYPE                                            AVALIABLE_VALUE
+        cpu_maxprofile                    403200 604800 806400 1017600 1209600 1305600 1401600 1516800
+        cpu_minprofile                    403200 604800 806400 1017600 1209600 1305600 1401600 1516800
+        
+		cpu_a15_maxprofile                1017600 1209600 1401600 1612800 1708800 1804800 2016000
+        cpu_a15_minprofile                1017600 1209600 1401600 1612800 1708800 1804800 2016000
+		
+		gpu_maxprofile                    120000000 180000000 240000000 288000000 360000000 480000000 600000000
+        gpu_minprofile                    120000000 180000000 240000000 288000000 360000000 480000000 600000000
+        
+        ddr_maxprofile                    120000000 240000000 360000000 400000000 667000000 800000000
+        ddr_minprofile                    120000000 240000000 360000000 400000000 667000000 800000000
+		
+        cpu_number_max                    1,2,3,4
+        cpu_number_min                    1,2,3,4
+        cpu_a15_number_max                0,1,2,3,4
+        cpu_a15_number_min                0,1,2,3,4
+
+        note:
+        1. if policy item has not configured, it means close cpupolicy of previous scene.
+        2. policy type default value is 0, policy value default value is -1
+		3. Don't set ddr_maxprofile for K3V3+ platform 
+		4. Don't set <threshold_up>0</threshold_up> and <threshold_down>0</threshold_down> for K3V3+ platform
+		last modify time:2014-10-18
+-->
+<thermal version="2.3">
+
+ <sensor_temp name="cpu" type="0" enable="true" min_temp="0" step="2" to_celsius="1">
+    <item>
+        <thresholds>50</thresholds>
+        <thresholds_clr>48</thresholds_clr>
+        <action>
+            <cpu>960000</cpu>        
+        </action>
+    </item>
+    <item>
+        <thresholds>53</thresholds>
+        <thresholds_clr>51</thresholds_clr>
+        <action>
+             <cpu>729000</cpu> 
+        </action>
+    </item>
+ </sensor_temp>
+
+ <sensor_temp name="ucurrent" type="2" enable="true" min_temp="0" step="3" to_celsius="1">
+    <item>
+        <thresholds>51</thresholds>
+        <thresholds_clr>49</thresholds_clr>
+        <action>
+            <ucurrent>700</ucurrent>
+        </action>
+    </item>
+ </sensor_temp>
+
+</thermal>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/ glconfig.xsd" >
+  <!--HAL Confguration LogDirectory="/data/gps/log/" -->
+  <hal 
+       PortName="/dev/ttyAMA2"
+       BaudRate="921600"
+       AtCmdTransportPort="/dev/appvcom9"
+
+       LogEnabled="false"
+       Log="FILE"
+       LogDirectory="/sdcard/gps/log"
+       GpslogdPipePath="/data/gps/.gpslogd.pipe"
+
+       GpioNStdbyPath="/proc/gps/nstandby"
+
+       GpioDelayMs="130"
+       NvStorageDir="/data/gps/"
+       NmeaOutName="/data/gps/gpspipe"
+       CtrlPipe="/data/gps/glgpsctrl"
+
+       ReAidingType="3"
+       ReAidingIntervalSec="1200"
+       ReAidingRetryIntervalSec="20"
+
+       SuplEnable="true"
+       SuplMsbCapable="true"
+       SuplMsaCapable="true"
+       SuplAutonomousGpsCapable="true"
+       SuplEcidCapable="false"
+       EnhancedAssisted="false"
+       SuplUseApn="false"
+       SuplServer="supl.google.com"
+       SuplPort="7275"
+       SuplMinorVersion="0"
+       SuplVersion="2"
+       SuplTlsEnable="true"
+       SuplSslMethod="TLSv1"
+       SuplSslVerify="none"
+       SuplTlsCertPath="/data/cust/xml/server.pem"
+       SuplTlsStopForInvPath="false"
+       SuplLogEnable="false"
+       SuplLogFullName="/data/gps/log/supllog.txt"
+       WakeLock="geo"
+       HttpSyncLto="true"
+       LtoFileName="lto2.dat"
+       LtoDir="/data/gps/"
+       LtoSyncThresholdDays="3"
+       AssertEnabled="false"
+
+  />
+
+  <hal
+       HulaEnable="false"
+       HulaSensorMask="0F"
+       HulaLog="false"
+       HulaMoEnable="true"
+       HulaTurnEnable="true"
+       HulaRawAcclGyroEnable="true"
+  />
+  <gll 
+       LogPriMask="LOG_DEBUG"
+       LogFacMask="LOG_DEFAULT"
+       FrqPlan="FRQ_PLAN_26MHZ_2PPM_49_152MHZ_300PPB"
+       RfType="GL_RF_4752_BRCM_EXT_LNA"
+       WarmStandbyTimeout1Seconds="10"
+       WarmStandbyTimeout2Seconds="15"
+  >
+  </gll>
+
+  <gll_features
+    EnableLowPowerEls="false"
+    EnableLowPowerPmm="true"
+    EnableInternalBlanking="true"
+  />
+
+<job Id="Periodic">
+    <task>
+        <req_pos/>
+    </task>
+</job>
+
+<!-- Periodic Position with the ROM almanac ignored for simulator testing -->
+<job id="Simulator_Periodic">
+    <task id="cont" repeat="1">
+      <startup ignore_rom_alm="true" />
+      <req_pos validfix="2000" duration_sec="4500"/>      
+    </task>
+</job>
+
+<!-- Repetetive cold starts -->
+<job id="Cold_Starts">
+    <task repeat="100">
+           <startup
+                     ignore_osc="false"
+                     ignore_rom_alm="false"
+                     ignore_ram_alm="false"
+                     ignore_pos="true"
+                     ignore_nav="true"
+                     ignore_time="true"
+           />
+      <req_pos validfix="1"/>
+    </task>
+</job>
+
+<!-- This job starts signle chanel factory test mode
+       The signal is expected to be in the range from -125 dBm to -145 dBm
+       with the frequency offset range from -2 ppm to +2 ppm
+       for this mode to provide reliable results
+-->
+<job id="Factory_High_SNR">
+    <task id="test" repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            PRN="1"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_CW"
+            avg_int_sec="10"
+            duration_sec="60"
+        />
+    </task>
+</job>
+
+</glgps>

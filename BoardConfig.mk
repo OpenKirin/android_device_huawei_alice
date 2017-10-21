@@ -125,6 +125,9 @@ ENABLE_WEBGL := true
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := libinit_hi6210sft
 
+# Manifest allocator
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/prebuilts/manifest.xml
+
 # Wifi
 WPA_SUPPLICANT_VERSION          := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER 	:= NL80211

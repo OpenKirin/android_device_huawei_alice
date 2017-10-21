@@ -22,8 +22,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 # Inherit from kiwi device
 $(call inherit-product, device/huawei/alice/device.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280

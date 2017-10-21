@@ -7,8 +7,8 @@
 
 #<src>                                          	<mnt_point>    	<type>	<mnt_flags and options>				     						<fs_mgr_flags>
 /dev/block/mmcblk0p38  				/system		ext4	ro													wait,check
-/dev/block/platform/hi_mci.0/by-name/userdata  	/data	  	ext4	rw,nosuid,nodev,noatime,user_xattr,acl,barrier=1,data=ordered,noauto_da_alloc,mblk_io_submit,discard	wait,check,formattable,encryptable=footer
-/dev/block/mmcblk0p34  				/cache	 	ext4	rw,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered						wait,check,formattable
+/dev/block/platform/hi_mci.0/by-name/userdata  	/data	  	ext4	rw,nosuid,nodev,noatime,user_xattr,acl,barrier=1,data=ordered,noauto_da_alloc,mblk_io_submit		wait,check,formattable,encryptable=footer
+/dev/block/mmcblk0p34  				/cache	 	ext4	rw,nosuid,nodev,noatime,noauto_da_alloc,data=ordered							wait,check,formattable
 
 /dev/block/platform/hi_mci.0/by-name/misc      	/misc          	emmc	defaults                                                 						defaults
 /dev/block/platform/hi_mci.0/by-name/boot      	/boot          	emmc    defaults                                                 						defaults

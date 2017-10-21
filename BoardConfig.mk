@@ -123,9 +123,7 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi6210sft
 ENABLE_WEBGL := true
 
 # Vendor Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_hi6210sft
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_alice.cpp
 
 # Wifi
 WPA_SUPPLICANT_VERSION          := VER_0_8_X

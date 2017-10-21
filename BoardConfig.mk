@@ -67,11 +67,6 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_RECOVERY_NEEDS_FBIOPAN_DISPLAY := true
 BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
 
-# CMHW
-BOARD_HARDWARE_CLASS := \
-    $(LOCAL_PATH)/cmhw \
-    hardware/cyanogen/cmhw
-
 # Display
 USE_OPENGL_RENDERER := true
 TARGET_HARDWARE_3D := true
@@ -123,13 +118,6 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi6210sft
-TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6210sft
-
-# RIL
-COMMON_GLOBAL_CFLAGS += -DDISABLE_ASHMEM_TRACKING
-BOARD_RIL_CLASS := ../../../device/huawei/alice/ril
-PROTOBUF_SUPPORTED := true
-TARGET_RIL_VARIANT := proprietary
 
 # Enable WEBGL
 ENABLE_WEBGL := true

@@ -48,12 +48,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml
 
+# OMX
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/hisi_omx.cfg:system/etc/hisi_omx.cfg
+
 # Misc
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilts/device_monitor_for_nff.conf:system/etc/device_monitor_for_nff.conf \
-    $(LOCAL_PATH)/prebuilts/device_state_monitor.conf:system/etc/device_state_monitor.conf \
     $(LOCAL_PATH)/prebuilts/hisi_cfg.ini:system/etc/hisi_cfg.ini \
-    $(LOCAL_PATH)/prebuilts/hisi_cfg_alice.ini:system/etc/hisi_cfg_alice.ini
+    $(LOCAL_PATH)/prebuilts/hisi_cfg_alice.ini:system/etc/hisi_cfg_alice.ini \
+    $(LOCAL_PATH)/prebuilts/hisi_cfg_cherry.ini:system/etc/hisi_cfg_cherry.ini
 
 # Thermal engine
 PRODUCT_COPY_FILES += \

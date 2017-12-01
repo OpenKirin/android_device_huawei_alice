@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     usbaudio.kl
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi6210sft \

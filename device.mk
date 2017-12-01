@@ -132,6 +132,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.magic.api.version=0.1 \
     persist.sys.usb.config=mtp
 
+# LibShim
+PRODUCT_PACKAGES += \
+    libshim_camera \
+    libshim_gui \
+    libshim_icu \
+    libshim_log
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory

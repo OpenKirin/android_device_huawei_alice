@@ -87,8 +87,7 @@
 -->
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
-    <CamcorderProfiles cameraId="0" startOffsetMs="300">
-
+    <CamcorderProfiles cameraId="0">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
           <Video codec="h264"
                  bitRate="192000"
@@ -304,8 +303,7 @@
 
     </CamcorderProfiles>
 
-    <CamcorderProfiles cameraId="1" startOffsetMs="300">
-
+    <CamcorderProfiles cameraId="1">
         <EncoderProfile quality="low" fileFormat="mp4" duration="30">
           <Video codec="h264"
                  bitRate="192000"
@@ -503,23 +501,24 @@
          In other words, the applications won't be able to use the codec
          or query the capabilities of the codec at all if it is disabled
     -->
+    <!-- DTS2016042608144  zwx345778 20160505 begin -->
     <VideoEncoderCap name="h264" enabled="true"
         minBitRate="64000" maxBitRate="40000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1088"
-        minFrameRate="2" maxFrameRate="120" />
-
+        minFrameRate="3" maxFrameRate="30" />
+    <!-- DTS2016042608144  zwx345778 20160505 end -->
     <VideoEncoderCap name="h263" enabled="true"
         minBitRate="64000" maxBitRate="8000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1088"
-        minFrameRate="2" maxFrameRate="30" />
+        minFrameRate="3" maxFrameRate="30" />
     
     <VideoEncoderCap name="m4v" enabled="true"
         minBitRate="64000" maxBitRate="20000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1088"
-        minFrameRate="2" maxFrameRate="30" />
+        minFrameRate="3" maxFrameRate="30" />
     
     <AudioEncoderCap name="aac" enabled="true"
         minBitRate="8000" maxBitRate="320000"

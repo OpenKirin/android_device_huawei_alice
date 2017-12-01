@@ -1,0 +1,5 @@
+allow init tmpfs:lnk_file create;
+allow init socket_device:sock_file { create setattr };
+
+allow init mediaserver:process { noatsecure };
+allow init mediadrmserver:process { noatsecure };

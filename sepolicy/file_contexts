@@ -1,0 +1,226 @@
+# Sepolicy HUawei P8Lite
+
+/system/bin/agnsscontrol              			u:object_r:hi110x_daemon_exec:s0
+/system/bin/agnsslog              			u:object_r:hi110x_daemon_exec:s0
+/system/bin/atcmdserver					u:object_r:atcmdserver_exec:s0
+/system/bin/diagserver					u:object_r:diagserver_exec:s0
+/system/bin/dts_hpx_service				u:object_r:dts_hpx_service_exec:s0
+/system/bin/gnss_engine           			u:object_r:hi110x_daemon_exec:s0
+/system/bin/hi110x_dump           			u:object_r:hi110x_daemon_exec:s0
+/system/bin/hi110x_except_logd    			u:object_r:hi110x_daemon_exec:s0
+/system/bin/hi110x_logd           			u:object_r:hi110x_daemon_exec:s0
+/system/bin/lmk_config.sh				u:object_r:lmk_config_exec:s0
+/system/bin/logserver					u:object_r:logserver_exec:s0
+/system/bin/mac_addr_normalization			u:object_r:mac_addr_normalization_exec:s0
+/system/bin/oam_app               			u:object_r:hi110x_daemon_exec:s0
+/system/bin/octty                 			u:object_r:hi110x_daemon_exec:s0
+/system/bin/set_log		 			u:object_r:hi110x_daemon_exec:s0
+/system/bin/start_connectivity_hisi  			u:object_r:hi110x_daemon_exec:s0
+/system/vendor/bin/gnss_supl20clientd_hisi		u:object_r:hi110x_daemon_exec:s0
+/system/bin/thermal-daemon                              u:object_r:thermal-daemon_exec:s0
+
+/system/xbin/gnss_watchlssd_thirdparty			u:object_r:hi110x_daemon_exec:s0
+
+# huawei
+/cust(/.*)?						u:object_r:system_data_file:s0
+/splash2(/.*)?						u:object_r:splash2_data_file:s0
+/splash2/ares						u:object_r:system_data_file:s0
+/splash2/sim(/.*)?              			u:object_r:radio_data_file:s0
+/modemom(/.*)?						u:object_r:modem_log_file:s0
+/mnvm2:0(/.*)?						u:object_r:modem_nv_file:s0
+/modemnv(/.*)?						u:object_r:modem_nv_file:s0
+/3rdmodem(/.*)?						u:object_r:radio_data_file:s0
+/3rdmodemnvm(/.*)?					u:object_r:radio_data_file:s0
+/sec_storage(/.*)?					u:object_r:teecd_data_file:s0
+/3rdmodemnvmbkp(/.*)?					u:object_r:radio_data_file:s0
+/modem_log(/.*)?					u:object_r:modem_log_file:s0
+
+/data/log(/.*)?						u:object_r:logcat_data_file:s0
+/data/share(/.*)?					u:object_r:media_rw_data_file:s0
+/data/hwzd_logs(/.*)?					u:object_r:logcat_data_file:s0
+/data/hisi_logs(/.*)?					u:object_r:logcat_data_file:s0
+/data/helix(/.*)?					u:object_r:media_data_file:s0
+/data/offlinelogs/balong_modem1_simoffline.txt		u:object_r:radio_data_file:s0
+/data/offlinelogs/balong_modem2_simoffline.txt		u:object_r:radio_data_file:s0
+/data/sec_storage_data(/.*)?				u:object_r:teecd_data_file:s0
+/data/sec_storage_data_users(/.*)?			u:object_r:teecd_data_file:s0
+
+/dev/block/mmcblk0p4					u:object_r:frp_block_device:s0
+/dev/block/mmcblk0					u:object_r:atcmdserver_blkdev:s0
+/dev/block/mmcblk1              			u:object_r:atcmdserver_blkdev:s0
+/dev/block/mmcblk1p1					u:object_r:atcmdserver_blkdev:s0
+/dev/block/mmcblk0p19					u:object_r:atcmdserver_blkdev:s0
+/dev/block/mmcblk0p20					u:object_r:atcmdserver_blkdev:s0
+/dev/block/mmcblk0p39					u:object_r:cust_block_device:s0
+/dev/block/mmcblk0p40					u:object_r:userdata_block_device:s0
+/dev/block/mmcblk0p34					u:object_r:cache_block_device:s0
+/dev/block/mmcblk0p33					u:object_r:thirdmodem_block_device:s0
+/dev/block/mmcblk0p14					u:object_r:thirdmodemnvm_block_device:s0
+/dev/block/mmcblk0p15					u:object_r:thirdmodemnvmbkp_block_device:s0
+/dev/block/mmcblk0p13					u:object_r:secure_storage_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/cust       	u:object_r:cust_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/userdata       	u:object_r:userdata_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/cache       	u:object_r:cache_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/splash2       	u:object_r:splash2_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/3rdmodem       	u:object_r:thirdmodem_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/3rdmodemnvm       	u:object_r:thirdmodemnvm_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/3rdmodemnvmbkp     u:object_r:thirdmodemnvmbkp_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/secure_storage     u:object_r:secure_storage_block_device:s0
+/dev/block/platform/hi_mci.0/by-name/oeminfo		u:object_r:oeminfo_nvm_device:s0
+/dev/block/mmcblk0rpmb  				u:object_r:teecd_blkdev:s0
+/dev/block/zram0					u:object_r:zram_device:s0
+
+/dev/appvcom.*						u:object_r:radio_device:s0
+/dev/appvcom2						u:object_r:modem_device:s0
+/dev/appvcom8						u:object_r:modem_device:s0
+/dev/appvcom17						u:object_r:modem_device:s0
+/dev/appvcomERRLOG					u:object_r:modem_device:s0
+/dev/bastet						u:object_r:bastet_device:s0
+/dev/flp						u:object_r:flp_device:s0
+/dev/chrAppBt                     			u:object_r:hi110x_dev:s0
+/dev/chrAppGnss                   			u:object_r:hi110x_dev:s0
+/dev/chrAppWifi                   			u:object_r:hi110x_dev:s0
+/dev/chrKmsgBFG                   			u:object_r:hi110x_dev:s0
+/dev/chrKmsgWifi                  			u:object_r:hi110x_dev:s0
+/dev/ear_pa             				u:object_r:audio_device:s0
+/dev/efuse           					u:object_r:atcmdserver_blkdev:s0
+/dev/hifi_misc						u:object_r:audio_device:s0
+/dev/hwbfgdbg                     			u:object_r:hi110x_dev:s0
+/dev/hwbt                         			u:object_r:hi110x_dev:s0
+/dev/hwcoexist                    			u:object_r:hi110x_dev:s0
+/dev/hwfm                         			u:object_r:hi110x_dev:s0
+/dev/hwgnss                       			u:object_r:hi110x_dev:s0
+/dev/hwlog_exception					u:object_r:exception_device:s0
+/dev/hwlog_jank						u:object_r:jank_device:s0
+/dev/hwlog_switch					u:object_r:logcat_device:s0
+/dev/hwlog_tag						u:object_r:hi110x_dev:s0
+/dev/mali               				u:object_r:gpu_device:s0
+/dev/mali0						u:object_r:gpu_device:s0
+/dev/memory_throughput					u:object_r:gpu_device:s0
+/dev/nve0						u:object_r:recovery_device:s0
+/dev/socket/rild-balong-test				u:object_r:rild_debug_socket:s0
+/dev/socket/rild-debug1					u:object_r:rild_debug_socket:s0
+/dev/socket/rild-ims					u:object_r:rild_socket:s0
+/dev/socket/rild2					u:object_r:rild_socket:s0
+/dev/socket/rildm2					u:object_r:rild_socket:s0
+/dev/socket/rilds2					u:object_r:rild_socket:s0
+/dev/socket/tee-multi-user				u:object_r:tee_multi_user_socket:s0
+/dev/tc_ns_client					u:object_r:teecd_device:s0
+/dev/tfa9895            				u:object_r:audio_device:s0
+/dev/ttyAMA1						u:object_r:hci_attach_dev:s0
+/dev/ttyAMA2						u:object_r:gps_device:s0
+/dev/ttyAMA3						u:object_r:gps_device:s0
+/dev/ttyGS0						u:object_r:modem_device:s0
+/dev/ttyGS1						u:object_r:modem_device:s0
+/dev/ttyGS2						u:object_r:modem_device:s0
+/dev/ttyGS3						u:object_r:modem_device:s0
+/dev/ttyGS4						u:object_r:modem_device:s0
+/dev/ttyGS5						u:object_r:modem_device:s0
+/dev/ttyGS6						u:object_r:gps_device:s0
+/dev/ttyHwGS1						u:object_r:atcmdserver_blkdev:s0
+/dev/ttyHwGS2						u:object_r:recovery_device:s0
+
+/sys/touchscreen/gpio_reset   										u:object_r:sysfs_gpio_reset:s0
+
+/sys/devices/amba.*/enable_charger  									u:object_r:sysfs_charger:s0
+/sys/class/hw_power/charger/charge_data/enable_charger 							u:object_r:sysfs_charger:s0
+/sys/devices/huawei_charger.[0-9]*/enable_charger							u:object_r:sysfs_charger:s0
+
+/sys/devices/e8600000.mali(/.*)?									u:object_r:sysfs_gpu:s0
+
+/sys/class/leds/torch/brightness 									u:object_r:sysfs_brightness:s0
+/sys/class/leds/torch_front/brightness 									u:object_r:sysfs_brightness:s0
+/sys/devices/huawei,camcfgdev.*/video4linux/v4l-subdev[0-9]/torch/brightness 				u:object_r:sysfs_brightness:s0
+/sys/devices/huawei,camcfgdev.*/video4linux/v4l-subdev[0-9]/torch/max_brightness 			u:object_r:sysfs_brightness:s0
+/sys/devices/huawei,camcfgdev.*/video4linux/v4l-subdev[0-9]/torch/flash_thermal_protect 		u:object_r:sysfs_brightness:s0
+
+/sys/class/leds/lcd_backlight0/brightness								u:object_r:sysfs_backlight:s0
+/sys/devices/platform/hisi_fb.*/leds/lcd_backlight0/brightness						u:object_r:sysfs_backlight:s0
+
+/sys/class/leds/red/brightness										u:object_r:sysfs_led:s0
+/sys/class/leds/green/brightness 									u:object_r:sysfs_led:s0
+/sys/class/leds/blue/brightness  									u:object_r:sysfs_led:s0
+/sys/devices/fff34000.pmic/pmic_led.*/leds/blue/brightness   						u:object_r:sysfs_led:s0
+/sys/devices/fff34000.pmic/pmic_led.*/leds/red/brightness    						u:object_r:sysfs_led:s0
+/sys/devices/fff34000.pmic/pmic_led.*/leds/green/brightness    						u:object_r:sysfs_led:s0
+
+/sys/kernel/set_hmp_thresholds/policy									u:object_r:sysfs_pg:s0
+/sys/class/leds/torch/flash_thermal_protect								u:object_r:sysfs_pg:s0
+/sys/class/graphics/fb0/lcd_cabc_mode          								u:object_r:sysfs_pg:s0
+/sys/devices/virtual/graphics/fb0/lcd_cinema_mode							u:object_r:sysfs_pg:s0
+/sys/class/devfreq/ddrfreq/max_freq									u:object_r:sysfs_pg:s0
+/sys/class/devfreq/ddrfreq/min_freq									u:object_r:sysfs_pg:s0
+/sys/class/devfreq/gpufreq/max_freq									u:object_r:sysfs_pg:s0
+/sys/class/devfreq/gpufreq/min_freq									u:object_r:sysfs_pg:s0
+/sys/class/hw_power/charger/charge_data/ichg_thermal    						u:object_r:sysfs_pg:s0
+/sys/class/hw_power/charger/charge_data/iin_thermal    							u:object_r:sysfs_pg:s0
+/sys/devices/virtual/graphics/fb0/lcd_cabc_mode								u:object_r:sysfs_pg:s0
+/sys/devices/huawei_charger.*/ichg_thermal								u:object_r:sysfs_pg:s0
+/sys/devices/huawei_charger.*/iin_thermal								u:object_r:sysfs_pg:s0
+/sys/devices/fffc0000.ddr_devfreq/devfreq/ddrfreq/max_freq						u:object_r:sysfs_pg:s0
+/sys/devices/fffc0000.ddr_devfreq/devfreq/ddrfreq/min_freq						u:object_r:sysfs_pg:s0
+/sys/devices/fffc0000.ddr_devfreq/devfreq/ddrfreq/available_frequencies					u:object_r:sysfs_pg:s0
+/sys/devices/e8970000.mali/devfreq/gpufreq/max_freq							u:object_r:sysfs_pg:s0
+/sys/devices/e8970000.mali/devfreq/gpufreq/min_freq							u:object_r:sysfs_pg:s0
+/sys/devices/e8970000.mali/devfreq/gpufreq/available_frequencies					u:object_r:sysfs_pg:s0
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies  					u:object_r:sysfs_pg:s0
+/sys/devices/system/cpu/cpu4/cpufreq/scaling_available_frequencies  					u:object_r:sysfs_pg:s0
+/sys/devices/ddrfreq/devfreq/ddrfreq/min_freq   							u:object_r:sysfs_pg:s0
+/sys/devices/ddrfreq/devfreq/ddrfreq/max_freq   							u:object_r:sysfs_pg:s0
+/sys/devices/ddrfreq/devfreq/ddrfreq/available_frequencies  						u:object_r:sysfs_pg:s0
+/sys/devices/gpufreq/devfreq/gpufreq/min_freq   							u:object_r:sysfs_pg:s0
+/sys/devices/gpufreq/devfreq/gpufreq/max_freq   							u:object_r:sysfs_pg:s0
+/sys/devices/gpufreq/devfreq/gpufreq/available_frequencies  						u:object_r:sysfs_pg:s0
+
+/sys/devices/amba.12/f7101000.i2c/i2c-1/1-001c/command    						u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/amba.13/f7101000.i2c/i2c-1/1-001c/command    						u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/f8000000.hisi_led/leds/blue/brightness    							u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/f8000000.hisi_led/leds/red/brightness    							u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/f8000000.hisi_led/leds/green/brightness    						u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/platform/balong_fb.1/leds/lcd_backlight0/brightness    					u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/virtual/leds/torch/brightness    								u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/platform/huawei_sensor/mag_selfTest        						u:object_r:sysfs_huawei_sensor:s0  
+/sys/devices/platform/huawei_sensor/gyro_selfTest        						u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/platform/huawei_sensor/mag_info        							u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/platform/huawei_sensor/acc_info        							u:object_r:sysfs_huawei_sensor:s0
+/sys/devices/platform/huawei_sensor/als_info        							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/ps_sensor/calibrate              							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/ps_sensor/calibrate_timeout      							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/acc_sensor/info                  							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/acc_sensor/self_test             							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/acc_sensor/calibrate            							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/acc_sensor/calibrate_timeout            						u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/acc_sensor/self_test_timeout             						u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/gyro_sensor/self_test            							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/gyro_sensor/self_test_timeout             						u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/mag_sensor/self_test             							u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/mag_sensor/info            								u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/mag_sensor/self_test_timeout             						u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/airpress_sensor/read_airpress            						u:object_r:sysfs_huawei_sensor:s0
+/sys/class/sensors/airpress_sensor/set_calidata           						u:object_r:sysfs_huawei_sensor:s0
+
+/sys/class/graphics/fb0/lcd_test_config 								u:object_r:sysfs_framebuffer:s0
+/sys/class/graphics/fb0/amoled_pcd_errflag_check							u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_0/ina231_debug 								u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_0/ina231_set									u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_0/ina231_value 								u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_1/ina231_debug 								u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_1/ina231_set 									u:object_r:sysfs_framebuffer:s0
+/sys/class/ina231/ina231_1/ina231_value 								u:object_r:sysfs_framebuffer:s0
+/sys/class/graphics/fb0/amoled_acl  									u:object_r:sysfs_framebuffer:s0
+/sys/class/graphics/fb0/amoled_hbm  									u:object_r:sysfs_framebuffer:s0
+/sys/devices/virtual/graphics/fb0/lcd_test_config 							u:object_r:sysfs_framebuffer:s0
+/sys/class/graphics/fb0/lcd_support_mode       								u:object_r:sysfs_framebuffer:s0
+/sys/class/graphics/fb0/pic_enhance_mode       								u:object_r:sysfs_framebuffer:s0
+
+/sys/devices/platform/huawei_tp_color/tp_color_info							u:object_r:sysfs_tp_color:s0
+
+/sys/class/timed_output/vibrator/vibrator_calib								u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator/vibrator_calib						u:object_r:sysfs_vibrator:s0
+
+/proc/touchscreen/rawdata										u:object_r:sysfs_touchscreen:s0
+
+/sys/devices/bluetooth_power\..*									u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/bluetooth_sleep\..*									u:object_r:sysfs_bluetooth_writable:s0
+
+/sys/devices/virtual/usbswitch/usbsw/swstate								u:object_r:sysfs_swstate:s0

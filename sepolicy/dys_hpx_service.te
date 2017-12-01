@@ -1,0 +1,6 @@
+# dts_hpx_service daemon
+type dts_hpx_service, domain, domain_deprecated;
+type dts_hpx_service_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(dts_hpx_service)

@@ -1,0 +1,15 @@
+allow kernel domain:process setsched;
+allow kernel device:dir { add_name write };
+allow kernel kernel:capability mknod;
+allow kernel self:capability { mknod };
+allow kernel device:chr_file { create setattr };
+allow kernel device:blk_file { create setattr };
+
+allow kernel untrusted_app:fd use;
+allow kernel untrusted_app_tmpfs:file write;
+
+# /sys/devices/system/cpu/cpu[0-9]/cpufreq/*
+allow kernel kernel:capability { chown };
+allow kernel sysfs_devices_system_cpu:file { setattr };
+allow kernel sysfs:file { setattr };
+

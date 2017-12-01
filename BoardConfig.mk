@@ -150,5 +150,9 @@ BOARD_WPA_SUPPLICANT_DRIVER 	:= NL80211
 BOARD_HOSTAPD_DRIVER 		:= NL80211
 CONFIG_DRIVER_NL80211		:= y
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += \
+	device/huawei/alice/sepolicy
+
 # inherit from the proprietary version
 -include vendor/huawei/alice/BoardConfigVendor.mk

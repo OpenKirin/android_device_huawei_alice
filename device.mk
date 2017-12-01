@@ -107,6 +107,10 @@ PRODUCT_PACKAGES += \
     tinymix \
     tinypcminfo
 
+# Doze
+PRODUCT_PACKAGES += \
+    HisiDoze
+
 # Gello
 PRODUCT_PACKAGES += \
     Gello

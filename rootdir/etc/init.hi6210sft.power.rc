@@ -8,35 +8,69 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor optdemand
     restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/optdemand
 
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boost
+    write /sys/kernel/hmp/up_threshold 1020
+    write /sys/kernel/hmp/down_threshold 768
+
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/affected_cpus
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/affected_cpus
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/chip_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/chip_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/related_cpus
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/related_cpus
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed
+
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boost
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boost
-    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chown root  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse
-    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration
+    chown root  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration
-    chown system  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/down_threshold
+    chown root  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/down_threshold
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/down_threshold
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/go_hispeed_load
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/go_hispeed_load
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/go_hispeed_load
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/hispeed_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/hispeed_freq
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/hispeed_freq
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_down_factor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_down_factor
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_down_factor
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate_min
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate_min
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate_min
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/up_threshold
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/up_threshold
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/up_threshold
 
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration 80000
-    write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/down_threshold "50 208000:50 432000:50 729000:60 960000:70 1200000:70"
+    write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/down_threshold "45 208000:45 432000:50 729000:55 960000:60 1200000:65"
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/go_hispeed_load 95
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/hispeed_freq 1200000 
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_down_factor 4
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate 10000
     write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/sampling_rate_min 10000
-    write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/up_threshold "70 208000:70 432000:75 729000:85 960000:85 1200000:90"
+    write /sys/devices/system/cpu/cpu0/cpufreq/optdemand/up_threshold "65 208000:65 432000:70 729000:75 960000:80 1200000:85"
 
     # bring all CPUs online
     write /sys/devices/system/cpu/cpu0/online 1
@@ -50,9 +84,10 @@ on enable-low-power
 
     # Update foreground and background cpusets
     write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/foreground/boost/cpus 0-3
-    write /dev/cpuset/background/cpus 2
-    write /dev/cpuset/system-background/cpus 4-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/top-app/cpus 0-7
 
 on property:sys.boot_completed=1
     trigger enable-low-power
@@ -65,12 +100,13 @@ on property:dev.bootcomplete=1
 
 on property:init.svc.bootanim=running
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1200000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1200000
-    write sys/devices/gpufreq/devfreq/gpufreq/max_freq 500000000
-    write sys/devices/gpufreq/devfreq/gpufreq/min_freq 500000000    
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 960000
 
 on property:init.svc.bootanim=stopped
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1200000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 208000
-    write sys/devices/gpufreq/devfreq/gpufreq/max_freq 500000000
-    write sys/devices/gpufreq/devfreq/gpufreq/min_freq 250000000
+
+on property:service.bootanim.exit=1	
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor optdemand
+    write /sys/kernel/hmp/up_threshold 1020
+    write /sys/kernel/hmp/down_threshold 768

@@ -161,7 +161,7 @@ on early-fs
     start oeminfo_nvm
 
 on fs
-    export LD_SHIM_LIBS /system/lib64/libcutils.so|libshim_log.so:/system/lib/libcutils.so|libshim_log.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_audioroute.so:/system/lib64/hw/audio.primary.hi6210sft.so|libshim_audioroute.so
+    export LD_SHIM_LIBS "/system/bin/logserver|libshim_log.so:/system/bin/thermal-daemon|libshim_log.so:/system/lib/libhuaweiprocessing.so|libshim_icu.so:/system/lib/libcamera_core.so|libshim_gui.so:/system/lib/libcamera_core.so|libshim_camera.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_audioroute.so:/system/lib/hw/audio.primary.hi6210sft.so|libshim_icu.so:/system/lib/libFNVfbEngineLib.so|libshim_gui.so:/system/bin/hostapd|libshim_ssl2.so:/system/lib64/libril.so|libshim_icu.so"
 
     wait /dev/block/platform/hi_mci.0
     mount_all /fstab.hi6210sft

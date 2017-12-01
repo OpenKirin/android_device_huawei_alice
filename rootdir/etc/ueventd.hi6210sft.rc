@@ -14,3 +14,8 @@
 /dev/akm09911_dev         0660 system system
 
 /dev/pn544                0660 nfc nfc
+
+/dev/ear_pa               0660 media media
+/dev/tfa9895              0660 media media
+
+/dev/hwbt              	  0660 bluetooth net_bt_stack

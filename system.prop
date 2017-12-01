@@ -1,21 +1,33 @@
+# Android Run Time
+ro.sys.fw.dex2oat_thread_count=8
+
+# ActivityManager
+ro.config.max_starting_bg=8
+ro.sys.fw.use_trim_settings=true
+
 ro.sf.lcd_density=320
 ro.opengles.version=131072
 ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
-ro.config.fm_type=libbcmfm_if
 ro.config.ipv4.mtu=1400
-gsm.fastdormancy.mode=3
+gsm.fastdormancy.mode=1
 sys.refresh.dirty=1
 qemu.hw.mainkeys=0
-media.stagefright.use-awesome=false
 
 # Camera
 ro.camera.beauty.algo.doc=1
 ro.hwcamera.use.videosize.1080p=true
 ro.hwcamera.previeweffects=true
+ro.camera.config.burstcount=10
 persist.camera.cpp.duplication=false
+camera.hal1.packagelist=com.google.android.GoogleCamera
+
+# Connectivity
+ro.connectivity.sta_p2p_coex=false
+wifi.interface=wlan0
 
 # Performance
 ro.am.reschedule_service=true
+ro.config.enable_rcc=true
 
 ro.hwui.texture_cache_size=72
 ro.hwui.texture_cache_flushrate=0.4
@@ -30,16 +42,19 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_small_cache_width=1024
 ro.hwui.r_buffer_cache_size=8
 debug.hwui.render_dirty_regions=false
+debug.sf.no_hw_vsync=1
 
 # RIL
 ro.telephony.ril_class=HwHisiRIL
 audioril.lib=libhuawei-audio-ril.so
 persist.radio.apm_sim_not_pwdn=1
+persist.radio.lte_enabled=true
 
 ro.config.hw_lte_support=true
 ro.config.hw_show_4G_Plus_icon=true
 ro.config.hw_show_network_icon=true
-ro.telephony.default_network=9
-ro.telephony.ril.config=simactivation
 telephony.lteOnCdmaDevice=0
 telephony.lteOnGsmDevice=1
+
+# Tethering
+persist.sys.usb.config.extra=none

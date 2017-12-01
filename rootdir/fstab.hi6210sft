@@ -5,14 +5,26 @@
 #TODO: Add 'check' as fs_mgr_flags with data partition.
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
-#<src>                                          	<mnt_point>    	<type>	<mnt_flags and options>				     						<fs_mgr_flags>
-/dev/block/mmcblk0p38  				/system		ext4	ro													wait,check
-/dev/block/platform/hi_mci.0/by-name/userdata  	/data	  	ext4	rw,nosuid,nodev,noatime,user_xattr,acl,barrier=1,data=ordered,noauto_da_alloc,mblk_io_submit,discard	wait,check,formattable,encryptable=footer
-/dev/block/mmcblk0p34  				/cache	 	ext4	rw,nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered						wait,check,formattable
+#<src>                                          	<mnt_point>    		<type>	<mnt_flags and options>				     						<fs_mgr_flags>
+/dev/block/platform/hi_mci.0/by-name/system		/system			ext4	ro,barrier=1												wait,check
+/dev/block/platform/hi_mci.0/by-name/userdata  		/data	  		ext4	nosuid,nodev,noatime,user_xattr,acl,barrier=1,data=ordered,noauto_da_alloc,mblk_io_submit		wait,check,formattable,encryptable=footer,length=-16384
+#/dev/block/platform/hi_mci.0/by-name/userdata  	/data	  		f2fs	nosuid,nodev,noatime,inline_xattr									wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/platform/hi_mci.0/by-name/cache		/cache	 		ext4	nosuid,nodev,noatime,noauto_da_alloc,data=ordered							wait,check,formattable
+#/dev/block/platform/hi_mci.0/by-name/cache		/cache	 		f2fs	nosuid,nodev,noatime,inline_xattr									wait,check,formattable
 
-/dev/block/platform/hi_mci.0/by-name/misc      	/misc          	emmc	defaults                                                 						defaults
-/dev/block/platform/hi_mci.0/by-name/boot      	/boot          	emmc    defaults                                                 						defaults
-/dev/block/platform/hi_mci.0/by-name/recovery  	/recovery      	emmc    defaults                                                 						defaults
+/dev/block/platform/hi_mci.0/by-name/cust      		/cust          		ext4	ro,nosuid,nodev,noatime                                        						wait,check
+/dev/block/platform/hi_mci.0/by-name/modemnvm3		/mnvm3:0		ext4	rw,nosuid,nodev,noatime,noauto_da_alloc,data=ordered,user_xattr,barrier=1				wait,check
+/dev/block/platform/hi_mci.0/by-name/modemlog		/modem_log		ext4	rw,nosuid,nodev,noatime,noauto_da_alloc,data=ordered,user_xattr,barrier=1				wait,check
+/dev/block/platform/hi_mci.0/by-name/modemnvm2		/mnvm2:0		ext4	rw,nosuid,nodev,noatime,data=ordered									wait,check
+/dev/block/platform/hi_mci.0/by-name/splash2		/splash2		ext4	rw,nosuid,nodev,data=ordered										wait,check
+/dev/block/platform/hi_mci.0/by-name/3rdmodem		/3rdmodem		emmc	nosuid,nodev,noatime											wait,check
+/dev/block/platform/hi_mci.0/by-name/3rdmodemnvm	/3rdmodemnvm		emmc	nosuid,nodev,noatime											wait,check
+/dev/block/platform/hi_mci.0/by-name/3rdmodemnvmback	/3rdmodemnvmback	emmc	nosuid,nodev,noatime											wait,check
+/dev/block/platform/hi_mci.0/by-name/securetystorage	/sec_storage		ext4	nosuid,nodev,noatime,auto_da_alloc,mblk_io_submit,data=journal						wait,check
 
-/devices/hi_mci.1/mmc_host/mmc1/*              	auto           	vfat    defaults												voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
-/devices/hi6xxx-usb-otg/usb1/*		      	auto           	auto    defaults												voldmanaged=usbotg:auto
+/dev/block/platform/hi_mci.0/by-name/misc      		/misc          		emmc	defaults                                                 						defaults
+/dev/block/platform/hi_mci.0/by-name/boot      		/boot          		emmc    defaults                                                 						defaults
+/dev/block/platform/hi_mci.0/by-name/recovery  		/recovery      		emmc    defaults                                                 						defaults
+
+/devices/hi_mci.1/mmc_host/mmc1/*              		auto           		vfat    defaults												voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
+/devices/hi6xxx-usb-otg/usb1/*		      		auto           		auto    defaults												voldmanaged=usbotg:auto

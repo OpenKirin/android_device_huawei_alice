@@ -1,13 +1,16 @@
 
-/dev/mali                 0666   system     graphics
-/dev/ion                  0664   system     system
-/dev/video0               0660   system     camera 
-/dev/cnm_jpu              0660   system     camera
-/dev/cnm_vpu              0660   system     camera
+/dev/mali                 0666 system graphics
+/dev/ion                  0664 system system
+/dev/video0               0660 system camera 
+/dev/cnm_jpu              0660 system camera
+/dev/cnm_vpu              0660 system camera
 
-/dev/block/mmcblk0p19     0660   system      system
-/dev/miscnff              0770   root        system
-/dev/hifi_misc            0770   root        audio
-/dev/akm09911_dev         0660   system      system
+/dev/block/mmcblk0p4      0660 system system
+/dev/block/mmcblk0p19     0660 system system
+/dev/block/mmcblk0p35     0660 system system
+/dev/block/mmcblk0p36     0660 system system
+/dev/miscnff              0770 root system
+/dev/hifi_misc            0770 root audio
+/dev/akm09911_dev         0660 system system
 
-/dev/pn544                0660   nfc         nfc
+/dev/pn544                0660 nfc nfc

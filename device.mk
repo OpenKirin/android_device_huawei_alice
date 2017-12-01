@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.hi6210sft \
+    fstab.zram512m \
     init.chip.usb.rc \
     init.hi6210sft.power.rc \
     init.hi6210sft.rc \

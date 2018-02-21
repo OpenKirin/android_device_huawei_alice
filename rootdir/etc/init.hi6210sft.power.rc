@@ -44,7 +44,7 @@ on enable-low-power
 
     chown root system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boost
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boost
-    chown root  system /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse
+    chown root  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse
     chown root  system /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/optdemand/boostpulse_duration

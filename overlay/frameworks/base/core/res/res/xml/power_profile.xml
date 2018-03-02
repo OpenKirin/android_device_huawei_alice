@@ -17,24 +17,29 @@
 */
 -->
 <device name="Android">
+  <!-- All values are in mA except as noted -->
   <item name="none">0</item>
-  <item name="screen.on">58</item>
-  <item name="bluetooth.active">100</item>
-  <item name="bluetooth.on">3.7</item>
-  <item name="bluetooth.at">0</item>
-  <item name="screen.full">180</item>
-  <item name="wifi.on">2</item>
-  <item name="wifi.active">130</item>
-  <item name="wifi.scan">45</item>
-  <item name="dsp.audio">24</item>
-  <item name="dsp.video">70</item>
-  <item name="radio.active">137</item>
-  <item name="gps.on">45</item>
-  <item name="radio.scanning">4</item> <!-- TBD -->
-
+  <item name="screen.on">114</item> <!-- min brite -->
+  <item name="bluetooth.active">97</item>
+  <item name="bluetooth.on">0.6</item>
+  <item name="bluetooth.at">0.6</item> <!-- TBD -->
+  <item name="screen.full">340</item> <!-- backlight 16 leds -->
+  <item name="wifi.on">0.6</item>
+  <item name="wifi.active">128</item>
+  <item name="wifi.scan">146</item>
+  <item name="dsp.audio">43</item> <!-- k3v5 -->
+  <item name="dsp.video">176</item>
+  <item name="radio.active">190</item>
+  <item name="gps.on">70</item>
+  <item name="battery.capacity">2900</item> <!-- 3900mAh -->
+  <item name="radio.scanning">65</item> <!-- TBD -->
+  <!-- Current consumed by the radio at different signal strengths, when paging  -->
   <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
-      <value>3.9</value>
-      <value>2.8</value>
+    <value>13.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
+    <value>10.0</value>
   </array>
   <array name="cpu.speeds">
     <value>208000</value> <!-- 200 MHz CPU speed -->
@@ -42,23 +47,19 @@
     <value>729000</value> <!-- 700 MHz CPU speed -->
     <value>960000</value> <!-- 1.0 GHz CPU speed -->
     <value>1200000</value><!-- 1.2 GHz CPU speed -->
-    
   </array>
   <!-- Power consumption in suspend -->
-  <item name="cpu.idle">1.6</item> <!-- k3v3 -->
+  <item name="cpu.idle">4</item> <!-- k3v5 -->
   <!-- Power consumption due to wake lock held -->
-  <item name="cpu.awake">1.6</item> <!-- k3v3 -->
+  <item name="cpu.awake">43</item> <!-- k3v5 -->
   <!-- Power consumption at different speeds -->
- <array name="cpu.active">
-    <value>30</value>
-    <value>72</value>
-    <value>133</value>
-    <value>201</value>
-    <value>250</value>
-    <value>353</value>
+  <array name="cpu.active">
+    <value>107</value>
+    <value>244</value>
+    <value>425</value>
+    <value>582</value>
+    <value>899</value>
   </array>
-  <item name="battery.capacity">2200</item> <!-- 2200mAh -->
   <allow-in-power-save package="com.google.android.gms" />
   <allow-in-data-usage-save package="com.google.android.gms" />
 </device>
-<!-- DTS2014072901830 zwx216556 end-->

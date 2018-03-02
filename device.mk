@@ -118,10 +118,6 @@ PRODUCT_PACKAGES += \
     tinymix \
     tinypcminfo
 
-# Doze
-PRODUCT_PACKAGES += \
-    HisiDoze
-
 # KEYPAD
 PRODUCT_PACKAGES += \
     usbaudio.kl

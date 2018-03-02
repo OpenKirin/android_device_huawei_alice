@@ -45,6 +45,8 @@ ARCH_ARM_HIGH_OPTIMIZATION := true
 # Enable CPUSETS
 ENABLE_CPUSETS := true
 
+WITH_DEXPREOPT := true
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := hi6210sft,alice
 

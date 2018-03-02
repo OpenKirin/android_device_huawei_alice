@@ -154,10 +154,19 @@ TARGET_INIT_VENDOR_LIB := libinit_hi6210sft
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_alice.cpp
 
 # Wifi
-WPA_SUPPLICANT_VERSION          := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER 	:= NL80211
-BOARD_HOSTAPD_DRIVER 		:= NL80211
-CONFIG_DRIVER_NL80211		:= y
+TARGET_USES_64_BIT_BCMDHD	 := true
+BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_WLAN_DEVICE_REV            := bcm4343
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcm4343.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/system/vendor/firmware/fw_bcm4343s_p2p_hw.bin"
+WIFI_BAND                        := 802_11_ABG
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += \

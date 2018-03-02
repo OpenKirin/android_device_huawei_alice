@@ -28,4 +28,5 @@ PRODUCT_NAME := lineage_alice
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT="Huawei/ALE-L21/hwALE-H:6.0/HuaweiALE-L21/C432B596:user/release-keys" \
-    PRIVATE_BUILD_DESC="ALE-L21-user 6.0 HuaweiALE-L21 C432B596 release-keys"
+    PRIVATE_BUILD_DESC="ALE-L21-user 6.0 HuaweiALE-L21 C432B596 release-keys" \
+    TARGET_DEVICE=hi6210sft

@@ -145,7 +145,8 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libshim_gui \
     libshim_icu \
-    libshim_log
+    libshim_log \
+    libshim_wvm
 
 # USB
 PRODUCT_PACKAGES += \

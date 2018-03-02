@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/huawei/alice
+DEVICE_PATH := device/huawei/alice
 
 # Architecture
 TARGET_ARCH := arm64
@@ -62,7 +62,7 @@ TARGET_NO_RADIOIMAGE := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -77,12 +77,12 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_RECOVERY_NEEDS_FBIOPAN_DISPLAY := true
 BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/images
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(DEVICE_PATH)/images
 
 # CMHW
 BOARD_HARDWARE_CLASS := \
-    $(LOCAL_PATH)/cmhw \
-    hardware/cyanogen/cmhw
+    hardware/cyanogen/cmhw \
+    $(DEVICE_PATH)/cmhw
 
 ### FONTS
 EXTENDED_FONT_FOOTPRINT := true
@@ -129,10 +129,10 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Properties
-TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.hi6210sft
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.hi6210sft
 TARGET_RECOVERY_DEVICE_MODULES := libinit_hi6210sft
 
 # RIL
@@ -150,7 +150,7 @@ ENABLE_WEBGL := true
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_hi6210sft
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_alice.cpp
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_alice.cpp
 
 # Wifi
 TARGET_USES_64_BIT_BCMDHD	 := true

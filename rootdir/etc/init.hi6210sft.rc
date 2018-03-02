@@ -724,10 +724,8 @@ on property:ro.config.enable_rcc=true
     swapon_all fstab.zram512m
 
 on charger
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor optdemand
     chown system system /sys/class/android_usb/android0/switch_request
     chmod 0664 /sys/class/android_usb/android0/switch_request
-    start hw_ueventd
     start hw_charger
 
 # Start service

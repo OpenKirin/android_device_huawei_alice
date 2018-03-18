@@ -1,0 +1,6 @@
+# lmk_config daemon
+type lmk_config, domain;
+type lmk_config_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(lmk_config)

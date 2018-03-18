@@ -1,0 +1,6 @@
+# hi110x_daemon daemon
+type hi110x_daemon, domain;
+type hi110x_daemon_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(hi110x_daemon)

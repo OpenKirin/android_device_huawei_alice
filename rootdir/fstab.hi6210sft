@@ -1,0 +1,28 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+#TODO: Add 'check' as fs_mgr_flags with data partition.
+# Currently we dont have e2fsck compiled. So fs check would failed.
+
+#<src>                                          	<mnt_point>    		<type>	<mnt_flags and options>				     				<fs_mgr_flags>
+/dev/block/mmcblk0p38			/system			ext4	ro,barrier=1											wait,check
+/dev/block/mmcblk0p40  			/data	  		ext4	nosuid,nodev,noatime,user_xattr,acl,barrier=1,data=ordered,noauto_da_alloc,mblk_io_submit	wait,check,formattable,encryptable=footer,length=-16384
+/dev/block/mmcblk0p34			/cache	 		ext4	nosuid,nodev,noatime,noauto_da_alloc,data=ordered						wait,check,formattable
+
+/dev/block/mmcblk0p39      		/cust          		ext4	ro,nosuid,nodev,noatime                                        					wait,check
+/dev/block/mmcblk0p12			/mnvm3:0		ext4	rw,nosuid,nodev,noatime,noauto_da_alloc,data=ordered,user_xattr,barrier=1			wait,check
+/dev/block/mmcblk0p17			/modem_log		ext4	rw,nosuid,nodev,noatime,noauto_da_alloc,data=ordered,user_xattr,barrier=1			wait,check
+/dev/block/mmcblk0p11			/mnvm2:0		ext4	rw,nosuid,nodev,noatime,data=ordered								wait,check
+/dev/block/mmcblk0p18			/splash2		ext4	rw,nosuid,nodev,data=ordered									wait,check
+/dev/block/mmcblk0p33			/3rdmodem		emmc	nosuid,nodev,noatime										wait,check
+/dev/block/mmcblk0p14			/3rdmodemnvm		emmc	nosuid,nodev,noatime										wait,check
+/dev/block/mmcblk0p15			/3rdmodemnvmback	emmc	nosuid,nodev,noatime										wait,check
+/dev/block/mmcblk0p13			/sec_storage		ext4	nosuid,nodev,noatime,auto_da_alloc								wait,check
+
+/dev/block/mmcblk0p19      		/misc          		emmc	defaults                                                 					defaults
+/dev/block/mmcblk0p27      		/boot          		emmc    defaults                                                 					defaults
+/dev/block/mmcblk0p28  			/recovery      		emmc    defaults                                                 					defaults
+
+/devices/hi_mci.1/mmc_host/mmc1/*       auto           		vfat    defaults											voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
+/devices/hi6xxx-usb-otg/usb1/*		auto           		auto    defaults											voldmanaged=usbotg:auto

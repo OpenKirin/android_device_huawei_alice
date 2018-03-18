@@ -1,0 +1,6 @@
+# hw_ueventd daemon
+type hw_ueventd, domain;
+type hw_ueventd_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(hw_ueventd)

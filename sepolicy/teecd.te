@@ -1,0 +1,6 @@
+# teecd daemon
+type teecd, domain;
+type teecd_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(teecd)

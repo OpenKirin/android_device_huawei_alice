@@ -1,0 +1,69 @@
+
+/dev/mali                 0666 system graphics
+/dev/ion                  0664 system system
+/dev/video0               0660 system camera 
+/dev/cnm_jpu              0660 system camera
+/dev/cnm_vpu              0660 system camera
+
+/dev/block/mmcblk0p19     0660 system system
+/dev/block/mmcblk0p35     0660 system system
+/dev/block/mmcblk0p36     0660 system system
+/dev/miscnff              0770 root system
+/dev/hifi_misc            0770 root audio
+/dev/akm09911_dev         0660 system system
+/dev/block/mmcblk0p4      0660 system system
+/dev/block/mmcblk0p29     0660 system system
+
+/dev/pn544                0660 nfc nfc
+
+/dev/ear_pa               0660 media media
+/dev/tfa9895              0660 media media
+/dev/tfa9887		  0660 media media
+
+/dev/hwfm	          0660 system system
+/dev/hwbt              	  0660 bluetooth bluetooth
+/dev/hwgnss		  0660 system system
+/dev/hwbfgdbg	          0660 root root
+/dev/hwcoexist	          0660 root root
+/dev/chrKmsgWifi	  0660 system system
+/dev/chrKmsgBFG		  0660 system system
+/dev/chrAppWifi		  0660 wifi wifi
+/dev/chrAppBt		  0664 bluetooth bluetooth
+/dev/chrAppGnss		  0660 system system
+
+/dev/appvcom		  0660 radio radio
+/dev/appvcom1		  0660 radio radio
+/dev/appvcom2		  0660 system system
+/dev/appvcom4		  0660 media media
+/dev/appvcom5		  0660 radio radio
+/dev/appvcom6		  0660 radio radio
+/dev/appvcom8		  0660 system system
+/dev/appvcom10		  0660 radio radio
+/dev/appvcom12		  0660 media media
+/dev/appvcom13		  0660 radio radio
+/dev/appvcom14		  0660 radio radio
+/dev/appvcom15		  0660 radio radio
+/dev/appvcom17		  0660 system system
+
+/dev/appvcomERRLOG	  0660 system system
+
+/dev/drv2605		  0660 system system
+/dev/hwlog_tag		  0660 system system
+
+/dev/nve0		  0770 root system
+/dev/memsetdev		  0660 system system
+/dev/kmdev		  0660 keystore keystore
+/dev/efuse		  0660 system system
+/dev/anc_hs		  0660 media media
+/dev/hi6402_hifi_misc	  0660 media media
+/dev/speakerID		  0660 media media
+/dev/maxim_smartpa_dev	  0660 media media
+
+/dev/ttyAMA0		  0660 media media
+/dev/ttyAMA1		  0660 media media
+
+/dev/vmodem		  0660 radio radio
+/dev/ttyAMA5		  0660 radio radio
+
+/dev/wlanfty_status	  0400 system system
+/dev/wlanfty_ver	  0400 system system

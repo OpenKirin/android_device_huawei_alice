@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+**
+** Copyright 2009, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License")
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<device name="Android">
+  <item name="none">0</item>
+  <item name="screen.on">58</item>
+  <item name="bluetooth.active">100</item>
+  <item name="bluetooth.on">3.7</item>
+  <item name="bluetooth.at">0</item>
+  <item name="screen.full">180</item>
+  <item name="wifi.on">2</item>
+  <item name="wifi.active">130</item>
+  <item name="wifi.scan">45</item>
+  <item name="dsp.audio">24</item>
+  <item name="dsp.video">70</item>
+  <item name="radio.active">137</item>
+  <item name="gps.on">45</item>
+  <item name="radio.scanning">4</item> <!-- TBD -->
+
+  <array name="radio.on"> <!-- 1 entry per signal strength bin, TBD -->
+      <value>3.9</value>
+      <value>2.8</value>
+  </array>
+  <array name="cpu.speeds">
+    <value>208000</value> <!-- 200 MHz CPU speed -->
+    <value>432000</value> <!-- 400 MHz CPU speed -->
+    <value>729000</value> <!-- 700 MHz CPU speed -->
+    <value>960000</value> <!-- 1.0 GHz CPU speed -->
+    <value>1200000</value><!-- 1.2 GHz CPU speed -->
+    
+  </array>
+  <!-- Power consumption in suspend -->
+  <item name="cpu.idle">1.6</item> <!-- k3v3 -->
+  <!-- Power consumption due to wake lock held -->
+  <item name="cpu.awake">1.6</item> <!-- k3v3 -->
+  <!-- Power consumption at different speeds -->
+ <array name="cpu.active">
+    <value>30</value>
+    <value>72</value>
+    <value>133</value>
+    <value>201</value>
+    <value>250</value>
+<value>353</value>
+  </array>
+  <item name="battery.capacity">2200</item> <!-- 2200mAh -->
+  <allow-in-power-save package="com.google.android.gms" />
+  <allow-in-data-usage-save package="com.google.android.gms" />
+</device>
+<!-- DTS2014072901830 zwx216556 end-->

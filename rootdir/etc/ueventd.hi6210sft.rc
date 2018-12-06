@@ -1,3 +1,6 @@
+subsystem graphics_compose
+    devname uevent_devpath
+    dirname /dev/graphics
 
 /dev/mali                 0666 system graphics
 /dev/ion                  0664 system system
